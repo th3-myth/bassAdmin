@@ -6,7 +6,7 @@ const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('https://54.253.139.187/allproducts') 
+    fetch('https://bassback.onrender.com/allproducts') 
             .then((res) => res.json()) 
             .then((data) => setAllProducts(data))
     }
@@ -16,7 +16,7 @@ const ListProduct = () => {
     }, [])
 
     const removeProduct = async (id) => {
-      await fetch('https://54.253.139.187/removeproduct', {
+      await fetch('https://bassback.onrender.com/removeproduct', {
       method: 'POST',
       headers: {
         Accept:'application/json',
@@ -25,7 +25,7 @@ const ListProduct = () => {
       body: JSON.stringify({id:id}),
     })
 
-    fetch('https://54.253.139.187/allproducts') 
+    fetch('https://bassback.onrender.com/allproducts') 
     .then((res) => res.json()) 
     .then((data) => setAllProducts(data))
 

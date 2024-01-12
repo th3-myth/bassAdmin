@@ -22,7 +22,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append('product', image);
     
-    await fetch('https://54.253.139.187/upload', {
+    await fetch('https://bassback.onrender.com/upload', {
       method: 'POST',
       headers: {
         Accept:'application/json',
@@ -35,7 +35,7 @@ const AddProduct = () => {
     if (dataObj.success) {
       product.image = dataObj.image_url;
       console.log(product);
-      await fetch('https://54.253.139.187/addproduct', {
+      await fetch('https://bassback.onrender.com/addproduct', {
       method: 'POST',
       headers: {
         Accept:'application/json',
