@@ -6,7 +6,7 @@ const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('https://ec2-3-25-202-191.ap-southeast-2.compute.amazonaws.com/allproducts') 
+    fetch('https://54.253.139.187/allproducts') 
             .then((res) => res.json()) 
             .then((data) => setAllProducts(data))
     }
@@ -16,7 +16,7 @@ const ListProduct = () => {
     }, [])
 
     const removeProduct = async (id) => {
-      await fetch('https://ec2-3-25-202-191.ap-southeast-2.compute.amazonaws.com/removeproduct', {
+      await fetch('https://54.253.139.187/removeproduct', {
       method: 'POST',
       headers: {
         Accept:'application/json',
@@ -25,7 +25,7 @@ const ListProduct = () => {
       body: JSON.stringify({id:id}),
     })
 
-    fetch('https://ec2-3-25-202-191.ap-southeast-2.compute.amazonaws.com/allproducts') 
+    fetch('https://54.253.139.187/allproducts') 
     .then((res) => res.json()) 
     .then((data) => setAllProducts(data))
 
